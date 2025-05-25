@@ -245,4 +245,7 @@ with gr.Blocks() as demo:
     clear_message = gr.Textbox(label="Clear Status", interactive=False)
     clear_button.click(fn=clear_history, outputs=clear_message)
 
-demo.launch()
+#demo.launch()
+port = int(os.environ.get("PORT", 7860))
+demo.launch(server_name="0.0.0.0", server_port=port)
+
